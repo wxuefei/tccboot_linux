@@ -1,1 +1,0 @@
-../linux/include/asm-i386/posix_types.h

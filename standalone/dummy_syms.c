@@ -1,1 +1,0 @@
-../linux/arch/i386/lib/dummy_syms.c

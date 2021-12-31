@@ -1,9 +1,6 @@
 #!/bin/bash
 
-rm bbootsect bsetup build LOG ./bin/bzImage ./bin/tccboot.iso 2> /dev/null
-cd ./BBOOTSECT; ./02-CLEAN.sh; cd ..
-cd ./BSETUP; ./02-CLEAN.sh; cd ..
-cd ./BUILD; .//02-CLEAN.sh; cd ..
+rm bin/bbootsect bin/bsetup bin/build bin/LOG bin/bzImage bin/tccboot.iso 2> /dev/null 
 [ -d temp ] && rm -r temp
 rm *.log 2> /dev/null
 git checkout -- bin/boot/grub/stage2_eltorito
