@@ -1,0 +1,2 @@
+qemu-system-x86_64 -nographic -kernel bzImage -initrd initrd \
+-append "root=/dev/ram ramdisk_size=25000 console=ttyS0"  $*
