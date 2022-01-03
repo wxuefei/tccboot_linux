@@ -50,7 +50,7 @@ mkisofs \
    -graft-points \
     boot=boot \
     make_iso.sh=make_iso.sh \
-    READNE=README \
+    README=README \
     bzImage=bzImage \
     initrd.ext2.gz=initrd.ext2.gz
 

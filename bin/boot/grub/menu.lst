@@ -1,5 +1,5 @@
 # Boot automatically after 10 secs.
-timeout 2
+timeout 10
 
 # silent command execution
 # (dont display kernel and initrd commands on screen)
@@ -22,10 +22,16 @@ default saved
 
 # ================================================================
 
-title tccboot
+title linux with ext2 
 kernel /bzImage root=/dev/ram ramdisk_size=20000
 initrd /initrd.ext2.gz
 #savedefault
 boot
 
 # ================================================================
+
+title tccboot with romfs
+kernel /tccboot root=/dev/ram ramdisk_size=20000
+initrd /romfs
+#savedefault
+boot

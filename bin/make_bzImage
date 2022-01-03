@@ -1,0 +1,1 @@
+./build -b bbootsect bsetup vmlinux CURRENT > bzImage

@@ -28,9 +28,11 @@ tcc -I../linux/include ../linux/arch/i386/boot/tools/build.c -o build
 rm *.o bootsect.d
 }
 
-echo Building kernel
+echo Prepare building kernel
 
 . ../head.inc
+
+echo Build kernel vmlinux
 
 if [ -n "$(echo $CC | grep tcc)" ]; then
     CC="$CC -bench"
@@ -54,7 +56,16 @@ $FILE_LIST_2 \
 $FILE_LIST_3 \
 $FILE_LIST_4 \
 $FILE_LIST_5 \
-$CCLIB 2>&1 | tee LOG
+$CCLIB 
 
-. ../tail.inc
+[ ! -f "$KERNEL" ] && {
+    echo "error: compilation failed"
+    exit 1
+}
+
+echo Build bzImage
+echo "./build -b bbootsect bsetup $KERNEL CURRENT > $KERNEL_BOOT"
+
+./build -b bbootsect bsetup $KERNEL CURRENT > $KERNEL_BOOT
+./make_iso.sh
 
