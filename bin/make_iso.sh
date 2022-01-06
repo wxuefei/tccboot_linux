@@ -52,5 +52,5 @@ mkisofs \
     make_iso.sh=make_iso.sh \
     README=README \
     bzImage=bzImage \
-    initrd.ext2.gz=initrd.ext2.gz
+    initrd=initrd.ext2.gz
 

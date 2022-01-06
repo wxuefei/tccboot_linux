@@ -22,16 +22,22 @@ default saved
 
 # ================================================================
 
-title linux with ext2 
+title linux with romfs 
 kernel /bzImage root=/dev/ram ramdisk_size=20000
-initrd /initrd.ext2.gz
+initrd /initrd
 #savedefault
 boot
 
-# ================================================================
 
-title tccboot with romfs
+title tccboot compile linux kernel with romfs
 kernel /tccboot root=/dev/ram ramdisk_size=20000
-initrd /romfs
-#savedefault
+initrd /tccrd
 boot
+
+
+title hello with romfs
+kernel /tccboot root=/dev/ram ramdisk_size=20000
+initrd /hellord
+boot
+
+

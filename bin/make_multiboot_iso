@@ -1,3 +1,4 @@
+#initrd=initrd.ext2.gz
 mkisofs -o "./tccboot.iso"\
     -V "TCCBOOT" -iso-level 4 -R -D\
     -no-emul-boot -boot-info-table -boot-load-size 4\
@@ -5,7 +6,8 @@ mkisofs -o "./tccboot.iso"\
     -c boot/grub/stage2_eltorito.boot \
     -graft-points \
      boot=boot \
-     bzImage=bzImage \
+     bzImage=bzImage.gz \
+     initrd=tcc.romfs.gz \
      tccboot=tccboot \
-     initrd.ext2.gz=initrd.ext2.gz \
-     romfs=../../tccboot/example.romfs
+     tccrd=tcc.romfs.gz \
+     hellord=../../tccboot/example.romfs
